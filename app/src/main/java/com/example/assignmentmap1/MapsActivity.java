@@ -14,6 +14,7 @@ import com.google.android.gms.location.LocationCallback;
 import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
+import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
@@ -73,8 +74,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                     Toast.makeText(MapsActivity.this, locationResult.getLastLocation().toString(), Toast.LENGTH_LONG).show();
                     LatLng currentloc = new LatLng(locationResult.getLastLocation().getLatitude(), locationResult.getLastLocation().getLongitude());
+                    mMap.clear();
                     mMap.addMarker(new MarkerOptions().position(currentloc).title("Current Location"));
-                    mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(currentloc, 18));
+                    mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentloc,20f));
 
 
 
