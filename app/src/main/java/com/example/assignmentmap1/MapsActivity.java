@@ -75,7 +75,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                     Toast.makeText(MapsActivity.this, locationResult.getLastLocation().toString(), Toast.LENGTH_LONG).show();
                     LatLng currentloc = new LatLng(locationResult.getLastLocation().getLatitude(), locationResult.getLastLocation().getLongitude());
                     mMap.clear();
-                    mMap.addMarker(new MarkerOptions().position(currentloc).title("Current Location"));
+                    mMap.addMarker(new MarkerOptions().position(currentloc).title("My Location"));
                     mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentloc,20f));
 
 
